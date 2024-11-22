@@ -1,4 +1,4 @@
-package gr.codehub.j101.p01jvm.p03streamfunction;
+package gr.codehub.j101.p03streamfunction;
 
 @FunctionalInterface
 public interface Titler {
