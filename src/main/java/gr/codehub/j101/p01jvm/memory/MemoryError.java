@@ -5,17 +5,14 @@ import java.util.List;
 
 public class MemoryError {
     public static void main(String[] args) {
-        if (true) {
-            stackErrors();
-        } else {
-            heapErrors();
-        }
+        // stackErrors();
+        heapErrors();
     }
 
     private static void stackErrors() {
         try {
             doSomething(0);
-        } catch (Exception e) { // Exception will not catch the error
+        } catch (Error e) { // Exception will not catch the error
             System.out.println("There was an error of: " + e);
             System.out.println("Saved it!");
         }
@@ -39,7 +36,7 @@ public class MemoryError {
                 System.out.println("List size=" + String.format("%,d", blockCount * blockSize));
                 System.out.printf("Available heap memory: %,d\n", Runtime.getRuntime().freeMemory());
             }
-        } catch (Exception e) { // Exception will not catch the memory error!
+        } catch (Error e) { // Exception will not catch the memory error!
             System.out.println("There was an error of: " + e);
             System.out.println("Saved it!");
         }
